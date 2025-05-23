@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global base styles if needed */
+body {
+  font-family: 'Inter', sans-serif; /* Ensure Inter is the default or set in tailwind.config.js */
+}
