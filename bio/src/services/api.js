@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5001/api'; // Your backend URL
+const API_BASE_URL = "https://mybio-1.onrender.com"; // Your backend URL
 
 // --- Auth Functions ---
 export const loginAdmin = async (username, password) => {
