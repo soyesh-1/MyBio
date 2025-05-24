@@ -48,20 +48,22 @@ app.get('/', (req, res) => {
     res.send('Hello from the Bio Website Backend!');
 });
 
+
 // --- API Routes ---
 const projectRoutes = require('./routes/projects');
 const authRoutes = require('./routes/auth');
 const cvRoutes = require('./routes/cv');
 const blogPostRoutes = require('./routes/blogPages');
 const profileRoutes = require('./routes/profile');
-// app.js or server.js
-app.use("/api/auth", require("./routes/auth"));
-app.use("/api/projects", require("./routes/projects"));
-app.use("/api/blog", require("./routes/blog"));
-app.use("/api/blog-pages", require("./routes/blogPages"));
-app.use("/api/contact", require("./routes/contact"));
-app.use("/api/cv", require("./routes/cv"));
-app.use("/api/profile", require("./routes/profile"));
+const contactRoutes = require('./routes/contact');
+
+app.use("/api/auth", authRoutes);
+app.use("/api/projects", projectRoutes);
+app.use("/api/blog", blogPostRoutes);
+app.use("/api/blog-pages", blogPostRoutes); // optional if needed separately
+app.use("/api/contact", contactRoutes);
+app.use("/api/cv", cvRoutes);
+app.use("/api/profile", profileRoutes);
 
 
 app.listen(PORT, () => {

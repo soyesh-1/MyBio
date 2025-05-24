@@ -3,12 +3,12 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs'); // File system module
-const Cv = require('./models/Cv'); // Your Cv model
+const Cv = require('../models/Cv'); // Your Cv model
 const { protect, adminOnly } = require('../middleware/authMiddleware'); // Auth middleware
 
 // --- Multer Configuration for File Uploads ---
 // Ensure the upload directory exists
-const cvUploadDir = path.join(__dirname, '..', 'uploads', 'cv'); // Path relative to this routes file
+const cvUploadDir = path.join(__dirname, '../uploads/cv'); // Path relative to this routes file
 if (!fs.existsSync(cvUploadDir)) {
     fs.mkdirSync(cvUploadDir, { recursive: true });
 }
